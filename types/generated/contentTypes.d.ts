@@ -34,10 +34,6 @@ export interface AdminApiToken extends Struct.CollectionTypeSchema {
         minLength: 1;
       }> &
       Schema.Attribute.DefaultTo<''>;
-    encryptedKey: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        minLength: 1;
-      }>;
     expiresAt: Schema.Attribute.DateTime;
     lastUsedAt: Schema.Attribute.DateTime;
     lifespan: Schema.Attribute.BigInteger;
@@ -780,7 +776,6 @@ export interface PluginPageBuilderTemplate extends Struct.CollectionTypeSchema {
   attributes: {
     contentType: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Configurable &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -794,7 +789,6 @@ export interface PluginPageBuilderTemplate extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     json: Schema.Attribute.JSON &
       Schema.Attribute.Required &
-      Schema.Attribute.Configurable &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -808,7 +802,6 @@ export interface PluginPageBuilderTemplate extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
-      Schema.Attribute.Configurable &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -817,10 +810,13 @@ export interface PluginPageBuilderTemplate extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 100;
       }>;
+    page_builder_template: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::page-builder.template'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     shortName: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Configurable &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;

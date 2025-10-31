@@ -1,5 +1,5 @@
 {
-  "name": "my-app-name",
+  "name": "strapi-on-linux-appservice-5-10-3",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -7,25 +7,32 @@
     "build": "strapi build",
     "deploy": "strapi deploy",
     "develop": "strapi develop",
-    "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.15.0",
-    "@strapi/plugin-users-permissions": "5.15.0",
-    "@strapi/strapi": "5.15.0",
+    "@strapi/plugin-cloud": "5.10.3",
+    "@strapi/plugin-graphql": "^5.0.0",
+    "@strapi/plugin-users-permissions": "5.10.3",
+    "@strapi/strapi": "5.10.3",
     "@wecre8websites/strapi-page-builder": "^1.0.11",
-    "better-sqlite3": "11.3.0",
-    "fs-extra": "^10.0.0",
-    "mime-types": "^2.1.27",
+    "better-sqlite3": "^12.4.1",
+    "lodash": "^4.17.19",
+    "mysql2": "^3.14.0",
+    "pg": "8.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "strapi-provider-email-azure": "^1.0.4",
+    "strapi-provider-upload-azure-storage": "^3.4.0",
     "styled-components": "^6.0.0"
   },
   "engines": {
     "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "template": "website",
+    "uuid": "450feb9a-5f2f-4eb0-837b-dbc364990d7c"
   }
 }
