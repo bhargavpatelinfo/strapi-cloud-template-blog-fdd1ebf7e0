@@ -7,10 +7,11 @@
     "build": "strapi build",
     "deploy": "strapi deploy",
     "develop": "strapi develop",
-    "start": "strapi start",
+    "start": "strapi build && strapi start",
     "strapi": "strapi"
   },
   "dependencies": {
+    "@strapi/admin": "5.10.3",
     "@strapi/plugin-cloud": "5.10.3",
     "@strapi/plugin-graphql": "^5.0.0",
     "@strapi/plugin-users-permissions": "5.10.3",
