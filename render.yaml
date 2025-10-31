@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: strapi
+    env: node
+    buildCommand: |
+      apt-get update && apt-get install -y libvips-dev
+      pnpm install
+      NODE_OPTIONS="--max_old_space_size=8192" pnpm run build
+    startCommand: pnpm run start
+    envVars:
+      - key: NODE_OPTIONS
+        value: --max_old_space_size=8192
+      - key: SHARP_IGNORE_GLOBAL_LIBVIPS
+        value: true
