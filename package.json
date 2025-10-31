@@ -4,10 +4,10 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "build": "NODE_OPTIONS=\"--max_old_space_size=4096\" strapi build",
+    "build": "NODE_OPTIONS=\"--max_old_space_size=8192\" strapi build",
     "deploy": "strapi deploy",
     "develop": "strapi develop",
-    "start": "strapi build && strapi start",
+    "start": "NODE_OPTIONS=\"--max_old_space_size=8192\" strapi start",
     "strapi": "strapi"
   },
   "dependencies": {
